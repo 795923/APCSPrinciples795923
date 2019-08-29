@@ -1,9 +1,9 @@
 
-class box{
+class Box{
   constructor(x,y,dx,dy){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
-    this.acc = createVector(1,0);
+    this.acc = createVector(0,.1);
     this.clr = color(random(255), random(255), random(255))
   }
 
@@ -32,12 +32,12 @@ checkEdges(){
 }
 
 update(){
-  this.loc.add(this.vel.x);
-  this.loc.add(this.vel.y);
+  this.loc.add(this.vel);
+  this.vel.add(this.acc);
 }
 
 render(){
   fill(this.clr);
-  square(this.loc.x, this.loc.y, 50);
+  rect(this.loc.x, this.loc.y, 50, 50);
   }
 }
