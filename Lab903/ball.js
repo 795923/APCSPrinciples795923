@@ -1,6 +1,6 @@
 
 class Ball{
-  constructor(x,y,dx,dy){
+  constructor(x,y,dx,dy, id){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
     this.acc = createVector(0, .2);
