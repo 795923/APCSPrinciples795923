@@ -3,7 +3,7 @@ class Ball{
   constructor(x,y,dx,dy){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
-    this.acc = createVector(-1, .1);
+    this.acc = createVector(0, .2);
     this.clr = color(random(255), random(255), random(255))
   }
 
@@ -32,9 +32,11 @@ checkEdges(){
 }
 
 update(){
-  this.loc.add(this.vel.x);
-  this.loc.add(this.vel.y);
+  this.loc.add(this.vel);
   this.vel.add(this.acc);
+  this.acc = p5.Vector(this.loc, other.loc);
+  this.acc.normalized();
+  this.acc.mult(0.5);
 }
 
 render(){
