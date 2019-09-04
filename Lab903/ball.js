@@ -1,9 +1,8 @@
 
 class Ball{
-  constructor(x,y,dx,dy, id){
+  constructor(x,y,dx,dy,id){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
-    this.acc = createVector(0, .2);
     this.clr = color(random(255), random(255), random(255))
   }
 
@@ -35,12 +34,12 @@ update(){
   this.loc.add(this.vel);
   this.vel.add(this.acc);
   //this.acc = p5.Vector(this.loc, other.loc);
-  // this.acc.normalized();
+  //this.acc.normalized();
   //this.acc.mult(0.5);
 }
 
 render(){
   fill(this.clr);
-  ellipse(this.loc.x, this.loc.y, 50, 50);
+  ellipse(this.loc.x, this.loc.y, 10, 10);
   }
 }
