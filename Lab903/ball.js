@@ -34,9 +34,9 @@ checkEdges(){
 update(){
   this.loc.add(this.vel);
   this.vel.add(this.acc);
-  this.acc = p5.Vector(this.loc, other.loc);
-  this.acc.normalized();
-  this.acc.mult(0.5);
+  //this.acc = p5.Vector(this.loc, other.loc);
+  // this.acc.normalized();
+  //this.acc.mult(0.5);
 }
 
 render(){
