@@ -50,7 +50,6 @@ update(){
       this.acc = p5.Vector.sub(this.loc, mainBall.loc);
       this.acc.normalize();
       this.acc.mult(0.5);
-
     }
   }
   this.vel.limit(5)
