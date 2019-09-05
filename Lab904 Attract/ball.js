@@ -41,13 +41,14 @@ update(){
     distToMainBall = this.loc.dist(mainBall.loc);
     if(distToMainBall < 250){
       this.acc = p5.Vector.sub(mainBall.loc, this.loc);
-      this.acc.normalized();
+      this.acc.normalize();
       this.acc.mult(0.1);
     }
     if(distToMainBall < 150){
       this.acc = p5.Vector.sub(mainBall.loc, this.loc);
-      this.acc.normalized();
+      this.acc.normalize();
       this.acc.mult(0.5);
+    }
   }
 }
 
