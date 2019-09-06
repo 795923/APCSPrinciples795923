@@ -35,11 +35,7 @@ checkEdges(){
 
 update(){
 
-  push()
-  translate(this.loc.x, this.loc.y);
-  rotate(this.angle);
-  triangle(-5, 8, 5, 8, 0, -8);
-  pop();
+
 
   this.vel.limit(5)
   this.vel.add(this.acc);
@@ -48,6 +44,10 @@ update(){
 
 render(){
   fill(this.clr);
-  triangle(this.loc.x-5, this.loc.y+8, this.loc.z, this.loc.z-8);
+  push();
+    translate(this.loc.x, this.loc.y);
+    rotate(this.angle);
+    triangle(-5, 8, 5, 8, 0, -8);
+  pop();
   }
 }
