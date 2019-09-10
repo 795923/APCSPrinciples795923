@@ -1,13 +1,16 @@
 
 class Ship{
-  constructor(x,y,z,dx,dy,dz,id){
-    this.loc = createVector(x,y, z);
-    this.vel = createVector(dx,dy, dz);
+  constructor(x,y,dx,dy,id){
+    this.loc = createVector(x,y);
+    this.vel = createVector(dx,dy);
     this.clr = color(random(255), random(255), random(255))
     this.id =id
-    this.angle = 0;
+    this.w = 15
+    if (this.id<0){
+      this.w =50;
     }
   }
+
 
 run(){
   this.checkEdges();
