@@ -5,12 +5,8 @@ class Ship{
     this.vel = createVector(dx,dy);
     this.clr = color(random(255), random(255), random(255))
     this.id =id
-    this.w = 15
-    if (this.id<0){
-      this.w =50;
-    }
+    this.angle= 0;
   }
-
 
 run(){
   this.checkEdges();
@@ -19,6 +15,22 @@ run(){
 }
 
 checkEdges(){
+  var distToMainBall;
+    if(this.id >= 0) {
+      distToMainBall = this.loc.dist(mainBall.loc);
+      // attract balls
+      if(distToMainBall < 500){
+        this.acc = p5.Vector.sub(mainBall.loc, this.loc);
+        this.acc.normalize();
+        this.acc.mult(0.1);
+      }
+      //repell balls
+      if(distToMainBall < 150){
+        this.acc = p5.Vector.sub(this.loc, mainBall.loc);
+        this.acc.normalize();
+        this.acc.mult(0.3);
+      }
+    }
   if(this.loc.x<0){
   this.loc.x = (width)
   }
@@ -37,9 +49,6 @@ checkEdges(){
 }
 
 update(){
-
-
-
   this.vel.limit(5)
   this.vel.add(this.acc);
   this.loc.add(this.vel);
@@ -47,6 +56,7 @@ update(){
 
 render(){
   fill(this.clr);
+  this.angle = this.angle + .03;
   push();
     translate(this.loc.x, this.loc.y);
     rotate(this.angle);
