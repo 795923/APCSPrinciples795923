@@ -7,13 +7,8 @@ class Paddle{
   }
 
 run(){
-  this.checkEdges();
-  this.update();
   this.render();
-}
-
-checkEdges(){
-
+  this.update();
 }
 
 update(){
