@@ -7,19 +7,13 @@ class Paddle{
   }
 
 run(){
-  this.checkEdges();
-  this.update();
   this.render();
-}
-
-checkEdges(){
-
+  this.update();
 }
 
 update(){
     var mouseLoc = createVector(mouseX, 725);
     this.loc = p5.Vector.lerp(this.loc, mouseLoc, .09);
-}
 
 render(){
   fill(this.clr);
