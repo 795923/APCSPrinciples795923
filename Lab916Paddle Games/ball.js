@@ -5,6 +5,7 @@ class Ball{
     this.acc = createVector(0, .2);
     this.clr = color(random(255), random(255), random(255))
     this.id =id
+    this.health = 0
     this.score = 0
   }
 
@@ -29,21 +30,25 @@ class Ball{
     }
 //score
     if(750<this.loc.y<800){
-      this.score= this.score +1
+      this.health= this.health - 1
       // ball.splice(ball)
     }
 //paddle
     if(this.loc.x > paddle.loc.x && this.loc.x < paddle.loc.x + paddle.w && this.loc.y > paddle.loc.y && this.loc.y < paddle.loc.y + paddle.h){
       this.vel.y = -this.vel.y
+      this.score= this.score + 1
     }
   }
 
   update(){
     this.vel.add(this.acc);
     this.loc.add(this.vel);
+    fill(250, 0, 0);
     textSize(32);
-    text(this.score, 10, 30);
-    fill(0, 102, 153);
+    text("Health: " + this.health, 10, 30);
+    fill(0, 250, 0);
+    textSize(32);
+    text("Score: " + this.score, 650, 30);
   }
 
   render(){
