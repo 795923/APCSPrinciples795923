@@ -1,10 +1,10 @@
 class Ball{
-  constructor(x,y,dx,dy,i){
+  constructor(x,y,dx,dy,id){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
     this.acc = createVector(0, .2);
     this.clr = color(random(255), random(255), random(255))
-    this.i = 0
+    this.id = id
   }
 
   run(){
@@ -27,9 +27,9 @@ class Ball{
     this.vel.y = -this.vel.y
     }
 //score
-    if(750<this.loc.y<800){
+    if(800<this.loc.y){
       health= health - 1
-      ball.splice(1,i)
+      ball.splice(1,this.id)
     }
 //paddle
     if(this.loc.x > paddle.loc.x && this.loc.x < paddle.loc.x + paddle.w && this.loc.y > paddle.loc.y && this.loc.y < paddle.loc.y + paddle.h){

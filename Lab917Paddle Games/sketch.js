@@ -9,7 +9,7 @@ var gameState = 1
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
-  loadThings(10);
+  loadThings(3);
 }
 
 //  The draw function is called @ 30 fps
@@ -38,10 +38,21 @@ function runObjects(){
   }
   paddle.run();
 }
+
 function playGame(){
-  background(20,20,20);
+  runObjects();
 }
 
 function startGame(){
-    runObjects();
+    background(20,20,20);
+//title
+    fill(250, 250, 250);
+    textSize(100);
+    text("Paddle Game", 100, 300);
+
+
+}
+
+function endGame(){
+  background(20,20,20);
 }
