@@ -14,15 +14,15 @@ class Ball{
   }
 
   checkEdges(){
-  //left
+  //left edge
     if(this.loc.x<0){
     this.vel.x = -this.vel.x
     }
-//right
+//right edge
     if(this.loc.x>width){
     this.vel.x = -this.vel.x
     }
-//top
+//top edge
     if(this.loc.y<0){
     this.vel.y = -this.vel.y
     }
@@ -41,9 +41,11 @@ class Ball{
   update(){
     this.vel.add(this.acc);
     this.loc.add(this.vel);
+//Health text
     fill(250, 0, 0);
     textSize(32);
     text("Health: " + health, 10, 30);
+//Score text
     fill(0, 250, 0);
     textSize(32);
     text("Score: " + score, 650, 30);
