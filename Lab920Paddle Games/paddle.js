@@ -1,3 +1,6 @@
+//  Allison Smith
+//  September 25, 2019
+
 class Paddle{
   constructor(x,y){
     this.loc = createVector(x,y);

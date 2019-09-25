@@ -1,3 +1,6 @@
+//  Allison Smith
+//  September 25, 2019
+
 class Ball{
   constructor(x,y,dx,dy,id){
     this.loc = createVector(x,y);
