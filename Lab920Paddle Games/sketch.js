@@ -21,7 +21,10 @@ function draw() {
       playGame()
   }
   else if(gameState === 3){
-      endGame()
+      loseGame()
+  }
+  else if(gameState === 4){
+      winGame()
   }
 }
 
@@ -86,20 +89,38 @@ function playGame(){
       if (health === 0) {
          gameState = gameState + 1
       }
+      if (score === 50) {
+         gameState = gameState + 2
+      }
     }
 
-function endGame(){
-  background(20,20,20);
-  fill(0, 250, 0);
-  textSize(32);
-  text("Score: " + score, 650, 30);
-  fill(250, 250, 250);
-  textSize(100);
-  text("You Lost :(", 150, 300);
-  fill(250, 250, 250);
-  textSize(50);
-  text("To restart, press R", 200, 600);
-  if (keyCode === 82) {
-    gameState = 1
+function loseGame(){
+    background(20,20,20);
+    fill(0, 250, 0);
+    textSize(32);
+    text("Score: " + score, 650, 30);
+    fill(250, 250, 250);
+    textSize(100);
+    text("You Lost :(", 150, 300);
+    fill(250, 250, 250);
+    textSize(50);
+    text("To restart, press R", 200, 600);
+    if (keyCode === 82) {
+      gameState = 1
+    }
   }
-}
+function winGame(){
+    background(20,20,20);
+    fill(0, 250, 0);
+    textSize(32);
+    text("Score: " + score, 650, 30);
+    fill(250, 250, 250);
+    textSize(100);
+    text("You Won :)", 150, 300);
+    fill(250, 250, 250);
+    textSize(50);
+    text("To restart, press R", 200, 600);
+    if (keyCode === 82) {
+      gameState = 1
+    }
+  }
