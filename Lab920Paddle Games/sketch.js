@@ -79,8 +79,9 @@ function startGame(){
 //how to play
     fill(255, 100 ,0);
     textSize(20);
-    text("The goal of the game is to keep as many balls in the air as you can.", 100, 650);
-    text( "Once you lose all your balls, the game ends", 100, 700);
+    text("The goal of the game is to keep as many balls in the air as you can.", 100, 625);
+    text( "Once you lose all your balls, the game ends", 100, 650);
+    text( "Score 30 points to win the game", 100, 675);
 }
 
 function playGame(){
@@ -89,7 +90,7 @@ function playGame(){
       if (health === 0) {
          gameState = gameState + 1
       }
-      if (score === 50) {
+      if (score === 30) {
          gameState = gameState + 2
       }
     }
