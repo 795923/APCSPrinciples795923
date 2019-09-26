@@ -56,6 +56,7 @@ function startGame(){
       text("Press E for Easy", 100, 500);
        if (keyCode === 69) {
          loadThings(3);
+         score = 0
          gameState = gameState + 1
    }
 //medium
@@ -65,6 +66,7 @@ function startGame(){
       if (keyCode === 77) {
          loadThings(5);
          health = 4
+         score = 0
          gameState = gameState + 1
      }
 //hard
@@ -74,6 +76,7 @@ function startGame(){
        if (keyCode === 72) {
          loadThings(10);
          health = 8
+         score = 0
          gameState = gameState + 1
     }
 //how to play
