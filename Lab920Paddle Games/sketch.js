@@ -56,6 +56,7 @@ function startGame(){
       text("Press E for Easy", 100, 500);
        if (keyCode === 69) {
          loadThings(3);
+         health = 3
          score = 0
          gameState = gameState + 1
    }
@@ -93,7 +94,7 @@ function playGame(){
       if (health === 0) {
          gameState = gameState + 1
       }
-      if (score === 30) {
+      if (score >= 30) {
          gameState = gameState + 2
       }
     }
