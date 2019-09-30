@@ -12,6 +12,8 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
 }
 
+
+
 //  The draw function is called @ 30 fps
 function draw() {
   if(gameState === 1){
@@ -46,6 +48,19 @@ function runObjects(){
 
 function startGame(){
     background(20,20,20);
+    //start of Jackson's Code
+    fill(255,0,0);
+    stroke(255, 0, 0)
+    strokeWeight(10);
+    noFill();
+    ellipse(250,250,400,400);
+    line(100,400,325,50);
+    line(325,50,325,450);
+    line(235,250,320,250)
+    //end of Jackson's Code
+    stroke(0, 0, 0)
+    strokeWeight(0);
+
 //title
     fill(250, 250, 250);
     textSize(100);
