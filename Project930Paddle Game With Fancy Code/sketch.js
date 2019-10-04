@@ -53,11 +53,28 @@ function startGame(){
     stroke(255, 0, 0)
     strokeWeight(10);
     noFill();
-    ellipse(250,250,400,400);
-    line(100,400,325,50);
-    line(325,50,325,450);
-    line(235,250,320,250)
+    ellipse(250+150, 250+150,400,400);
+    line(100+150,400+150,325+150,50+150);
+    line(325+150,50+150,325+150,450+150);
+    line(235+150,250+150,320+150,250+150)
     //end of Jackson's Code
+    //start of Geecu
+    fill(255,0,0);
+    const xDiff = (lastX - mouseX);
+    const yDiff = (lastY - mouseY);
+    const xScale = xDiff / 10;
+    const yScale = xDiff / 10;
+    const x = lerp(lastX, mouseX, .2);
+    const y = lerp(lastY, mouseY, .2);
+    const size = map(Math.abs(xDiff * yDiff), 0, width * height / 1000, 5, 100);
+    ellipse(x - xScale, y - yScale, size, size);
+    fill(0,255,255);
+    ellipse(x + xScale, y + yScale, size, size);
+    fill(255,255,255);
+    ellipse(x, y, size, size);
+  lastX = mouseX;
+  lastY = mouseY;
+    //
     stroke(0, 0, 0)
     strokeWeight(0);
 
