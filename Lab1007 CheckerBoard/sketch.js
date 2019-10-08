@@ -14,6 +14,14 @@ function setup() {
 }
 
 function loadSquares() {
-  squares[0] = new Square(0,0,250,0,0)
-  squares[1] = new Square(100,0,0,250,0)
+x=0
+for (var i=0; i<=8; i= i+2){
+  squares[i] = new Square(x,0,250,0,0)
+  x= x+200
+  }
+x=100
+for (var j=1; j<=8; j= j+2){
+  squares[j] = new Square(x,0,0,250,0)
+  x= x+200
+  }
 }
