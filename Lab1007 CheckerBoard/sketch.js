@@ -20,8 +20,8 @@ for (var i=0; i<=8; i= i+2){
   x= x+200
   }
 x=100
-for (var j=1; j<=8; j= j+2){
-  squares[j] = new Square(x,0,0,250,0)
+for (var i=1; i<=8; i= i+2){
+  squares[i] = new Square(x,0,0,250,0)
   x= x+200
   }
 }
