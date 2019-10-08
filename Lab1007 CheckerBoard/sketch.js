@@ -1,5 +1,5 @@
 //  Allison Smith
-//  October 7, 2019
+//  October 8, 2019
 var squares = []
 
 function setup() {
@@ -14,6 +14,6 @@ function setup() {
 }
 
 function loadSquares() {
-  squares = new Square(0,0,250,0,0)
-  squares = new Square(100,0,0,250,0)
+  squares[0] = new Square(0,0,250,0,0)
+  squares[1] = new Square(100,0,0,250,0)
 }
