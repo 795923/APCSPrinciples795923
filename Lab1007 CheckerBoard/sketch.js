@@ -15,4 +15,5 @@ function setup() {
 
 function loadSquares() {
   squares = new Square(0,0,250,0,0)
+  squares = new Square(100,0,0,250,0)
 }
