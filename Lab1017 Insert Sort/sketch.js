@@ -1,5 +1,5 @@
 //  Allison Smith
-// 	October 17, 2019
+// 	October 18, 2019
 var list = []
 
 function setup() {
@@ -7,6 +7,11 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
+  function swap(list, a,b){
+    var temp =list[a];
+    list[a]= list[b];
+    list[b]= temp;
+    }
   for(var i=0; i < 10; i++){
     list[i] = i;
   }
@@ -23,9 +28,3 @@ function test(){
   }
 }
 console.log(list)
-
-function swap(list, a,b){
-  var temp =list[a];
-  list[a]= list[b];
-  list[b]= temp;
-  }
