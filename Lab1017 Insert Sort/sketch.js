@@ -16,9 +16,6 @@ function setup() {
     list[i] = i;
   }
   shuffle(list, true);
-}
-
-function test(){
   for(var j = 0; j<=list.length; j++){
     for(var i=0; i<=list.length-j; i++){
       if (list[i] > list[i+1]){
@@ -26,5 +23,5 @@ function test(){
         }
     }
   }
+  console.log(list)
 }
-console.log(list)
