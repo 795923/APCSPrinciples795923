@@ -19,8 +19,8 @@ function setup() {
 }
 
 function test(){
-  for(var j = 0; j<=10; j++){
-    for(var i=0; i<=10; i++){
+  for(var j = 0; j<=list.length; j++){
+    for(var i=0; i<=list.length-j; i++){
       if (list[i] > list[i+1]){
         swap(list, i, i+1)
         }
