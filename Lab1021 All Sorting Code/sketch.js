@@ -15,12 +15,13 @@ function setup() {
     list[b]= temp;
     swaps++
     }
-  for(var i=0; i < 10; i++){
+  for(var i=0; i < 1000; i++){
     list[i] = i;
   }
   shuffle(list, true);
 
   //insert
+  s1 = millis();
   for(var j = 0; j < list.length; j++){
     for(var i = j; i > 0; i--){
       comparisons++
@@ -29,15 +30,18 @@ function setup() {
         }
     }
   }
+  s2 = millis();
   console.log(list)
   console.log("Insert Sort")
   console.log("Swaps: " + swaps)
-  console.log("Comparisons " + comparisons)
+  console.log("Comparisons: " + comparisons)
+  console.log("Milliseconds: " + (s2-s1))
 
 //bubble
 swaps = 0
 comparisons = 0
 shuffle(list, true);
+s3 = millis();
 for (j=0; j<list.length-1; j++){
   for (i=0; i<list.length-1-j; i++){
     comparisons++
@@ -49,15 +53,18 @@ for (j=0; j<list.length-1; j++){
     }
   }
 }
+s4 = millis();
 console.log(list)
 console.log("Bubble Sort")
 console.log("Swaps: " + swaps)
-console.log("Comparisons " + comparisons)
+console.log("Comparisons: " + comparisons)
+console.log("Milliseconds: " + (s4-s3))
 
 //selection
 swaps = 0
 comparisons = 0
 shuffle(list, true);
+s5 = millis();
 for (var i = 0; i < list.length - 1; i++){
     var index = i;
     for (var j = i + 1; j < list.length; j++){
@@ -73,8 +80,10 @@ for (var i = 0; i < list.length - 1; i++){
     swaps++
 //  Swapping Code
         }
+s6 = millis();
 console.log(list)
 console.log("Selection Sort")
 console.log("Swaps: " + swaps)
-console.log("Comparisons " + comparisons)
+console.log("Comparisons: " + comparisons)
+console.log("Milliseconds: " + (s6-s5))
 }
