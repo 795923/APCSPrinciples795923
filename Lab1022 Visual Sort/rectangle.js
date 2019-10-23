@@ -1,12 +1,13 @@
 class Rectangle{
-constructor(x,y,l){
+constructor(x,y,w, h){
   this.x = x;
   this.y = y;
-  this.l = l;
-}
+  this.w = w;
+  this.h = h;
+  }
 
-render(){
-fill(250, 0, 0);
-rect(this.x, this.y, 100, this.l)
-}
+  render(){
+    fill(250, 0, 0);
+    rect(this.x, this.y, this.w, this.h)
+  }
 }
