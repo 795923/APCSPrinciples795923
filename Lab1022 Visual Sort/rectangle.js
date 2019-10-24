@@ -1,15 +1,15 @@
 //  Allison Smith
-// 	October 21, 2019
+// 	October 23, 2019
 class Rectangle{
-constructor(x,y,w, h){
-  this.x = x;
-  this.y = y;
-  this.w = w;
-  this.h = h;
+constructor(heightOfRect, loc, widthOfRect){
+  this.height = heightOfRect;
+  this.loc = loc;
+  this.width = widthOfRect;
+
   }
 
   render(){
     fill(0,250,0);
-    rect(this.x, this.y, this.w, this.h)
+    rect(this.loc, height - this.height, this.width, this.height)
   }
 }
