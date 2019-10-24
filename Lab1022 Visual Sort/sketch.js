@@ -1,5 +1,5 @@
 //  Allison Smith
-// 	October 21, 2019
+// 	October 23, 2019
 var rectangles = [];
 
 function setup() {
@@ -8,11 +8,11 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   for(var i=0; i < 100; i++){
-    rectangles[i] = new Rectangle(i,000,width/rectangles.length, random(0,800));
+    rectangles[i] = new Rectangle(i,800,-(width/rectangles.length), random(0,800));
   }
   shuffle(rectangles, true);
 
-//selection
+//selection sort
 for (var i = 0; i < rectangles.length - 1; i++){
     var index = i;
     for (var j = i + 1; j < rectangles.length; j++){
