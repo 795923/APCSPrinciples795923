@@ -1,5 +1,5 @@
 //  Allison Smith
-// 	October 23, 2019
+// 	October 25, 2019
 class Rectangle{
 constructor(heightOfRect, loc, widthOfRect){
   this.height = heightOfRect;

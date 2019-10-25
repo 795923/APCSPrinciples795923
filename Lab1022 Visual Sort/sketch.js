@@ -1,5 +1,5 @@
 //  Allison Smith
-// 	October 23, 2019
+// 	October 25, 2019
 var rectangles = [];
 var heights = [];
 var rectX = 0;
@@ -26,7 +26,7 @@ function draw(){
   for(var j = 0; j < heights.length; j++){
     for(var i = j; i > 0; i--){
       if (heights[i] < heights[i-1]){
-        swap(rectangles, i, i-1)
+        swap(heights, i, i-1)
         }
       }
     }
