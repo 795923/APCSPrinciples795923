@@ -7,6 +7,7 @@ var numRects = 20;
 var horizLoc = [];
 
 function setup() {
+  frameRate(5);
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
@@ -25,18 +26,17 @@ function setup() {
 
 function draw(){
 //insert
-  for(var j = 0; j < heights.length; j++){
-    for(var i = j; i < heights.length; i++){
-      if (heights[i] < heights[i-1]){
-        var tmp = heights[i];
-        rectangles[i] = new Rectangle(heights[i+1], horizLoc[i], width/numRects)
-        rectangles[i+1] = new Rectangle(heights[i], horizLoc[i+1], width/numRects)
-        for (n=0; n< numRects; n++){
-          rectangles[n].render();
+ for(var j = 0; j < heights.length; j++){
+      background(5,5,5);
+      for (n=0; n < numRects; n++){
+        rectangles[n].render();
         }
-        heights[i] = heights[i+1]
-        heights[i+1] = tmp
+      if (heights[j+1] < heights[j]){
+        var tmp = heights[j];
+        rectangles[j] = new Rectangle(heights[j+1], horizLoc[j], width/numRects)
+        rectangles[j+1] = new Rectangle(heights[j], horizLoc[j+1], width/numRects)
+        heights[j] = heights[j+1]
+        heights[j+1] = tmp
         }
-        }
-      }
     }
+  }
