@@ -1,28 +1,26 @@
 //  Allison Smith
-//  October 31, 2019
+//  November 1, 2019
 
 class Food{
   constructor(x,y){
     this.loc = createVector(x,y);
-    this.w = 250;
-    this.h = 50;
   }
 
 run(){
-  this.update();
+  // this.update();
   this.render();
 }
 
-update(){
-  if(snake === food){
-    this.loc.x = Math.floor(this.loc.x/w) 
-    this.loc.y = Math.floor(this.loc.y/w)
-  }
-}
+// update(){
+//   if(snake === food){
+//     this.loc.x = Math.floor(this.loc.x/w)
+//     this.loc.y = Math.floor(this.loc.y/w)
+//   }
+// }
 
 render(){
-  fill(255, 250,250);
-  rect(this.loc.x, this.loc.y, this.w, this.h);
+  fill(random(255), random(255), random(255));
+  rect(this.loc.x, this.loc.y, w, w);
   }
 }
 

@@ -1,11 +1,10 @@
 //  Allison Smith
-//  October 31, 2019
+//  November 1, 2019
 
 class Snake{
   constructor(x,y,dx,dy,id){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
-    this.acc = createVector(0, .2);
     this.clr = color(random(255), random(255), random(255))
   }
 
@@ -16,59 +15,34 @@ class Snake{
   }
 
   checkEdges(){
-//left edge
-    if(this.loc.x<0){
-    this.vel.x = -this.vel.x
-    }
-//right edge
-    if(this.loc.x>width){
-    this.vel.x = -this.vel.x
-    }
-//top edge
-    if(this.loc.y<0){
-    this.vel.y = -this.vel.y
-    }
-//score
-    for(var i = ball.length - 1; i >= 0; i--){
-      if(ball[i].isColliding()){
-        ball.splice(i, 1)
-        health= health - 1
-      }
-    }
-//paddle
-    if(this.loc.x > paddle.loc.x && this.loc.x < paddle.loc.x + paddle.w && this.loc.y > paddle.loc.y && this.loc.y < paddle.loc.y + paddle.h){
-      this.vel.y = -this.vel.y
-      score= score + 1
+//up arrow
+    if(keyCode===38){
+      this.vel.x = 0;
+      this.vel.y = -w;
+    }else if (keyCode===40) {
+      this.vel.x = 0;
+      this.vel.y = w;//down arrow
+    }else if (keyCode===37) {
+      this.vel.x = -w;
+      this.vel.y = 0;//left arrow
+    }else if (keyCode===39) {
+      this.vel.x = w;
+      this.vel.y = 0;//right arrow
     }
   }
 
   update(){
-    this.vel.add(this.acc);
     this.loc.add(this.vel);
-//Health text
-    fill(250, 0, 0);
-    textSize(32);
-    text("Health: " + health, 10, 30);
-//Score text
-    fill(0, 250, 0);
-    textSize(32);
-    text("Score: " + score, 650, 30);
-  }
+
+}
 
   render(){
-    fill(this.clr);
-    ellipse(this.loc.x, this.loc.y, 50, 50);
-  }
-  isColliding(){
-    if(this.loc.y > 850){
-      return true
-    }
+  fill(this.clr);
+  rect(this.loc.x, this.loc.y, 10, 10);
   }
 }
 
-// location 		// vector = location of the head
-// velocity 		// vector = direction of movement
-// clr 			// rgb triple of type color
+
 // body 		// array of segments.
 // add a segment after eating food.
 // each segment follows the segment in front of it.
@@ -81,3 +55,11 @@ class Snake{
 // tangled function
 // // call AFTER update test whether the snake got tangled up, return True if so
 // // convert to row,col to compare locations.  Maybe write a function for that?
+
+//splice code example
+// for(var i = ball.length - 1; i >= 0; i--){
+//   if(ball[i].isColliding()){
+//     ball.splice(i, 1)
+//     health= health - 1
+//   }
+// }
