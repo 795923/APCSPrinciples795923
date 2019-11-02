@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 1, 2019
+//  November 4, 2019
 
 class Food{
   constructor(x,y){

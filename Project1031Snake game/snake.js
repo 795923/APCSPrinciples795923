@@ -1,8 +1,8 @@
 //  Allison Smith
-//  November 1, 2019
+//  November 4, 2019
 
 class Snake{
-  constructor(x,y,dx,dy,id){
+  constructor(x,y,dx,dy){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
     this.clr = color(random(255), random(255), random(255))
@@ -19,15 +19,21 @@ class Snake{
     if(keyCode===38){
       this.vel.x = 0;
       this.vel.y = -w;
-    }else if (keyCode===40) {
+    }
+//down arrow
+    else if (keyCode===40) {
       this.vel.x = 0;
-      this.vel.y = w;//down arrow
-    }else if (keyCode===37) {
+      this.vel.y = w;
+    }
+//left arrow
+    else if (keyCode===37) {
       this.vel.x = -w;
-      this.vel.y = 0;//left arrow
-    }else if (keyCode===39) {
+      this.vel.y = 0;
+    }
+//right arrow
+    else if (keyCode===39) {
       this.vel.x = w;
-      this.vel.y = 0;//right arrow
+      this.vel.y = 0;
     }
   }
 

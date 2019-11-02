@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 1, 2019
+//  November 4, 2019
 
 // var snake = []
 // var gameState = 1
@@ -11,19 +11,18 @@ function setup() {
   loadThings();
 }
 
-//creates balls and paddle
+//creates snake and food
 function loadThings(){
-  // snake = new Snake(100, 100, 10, 10);
   snake = new Snake(random(width), random(height), w, w);
   food = new Food(random(width),random(height));
 }
 
 function runThings(){
-  // food.run();
+  food.run();
   snake.run();
 }
 
-//runs the ball and paddle classes
+//runs the snake and food classes
 function draw(){
   background(5,5,5);
   runThings();
