@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 4, 2019
+//  November 5, 2019
 
 // var snake = []
 var gameState = 1
