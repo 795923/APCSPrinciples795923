@@ -13,8 +13,8 @@ function setup() {
 
 //creates snake and food
 function loadThings(){
-  snake = new Snake(random(width), random(height), w, w);
-  food = new Food(random(width),random(height));
+  snake = new Snake(Math.floor(random(0,79))*w, Math.floor(random(0,79))*w, w, w);
+  food = new Food(Math.floor(random(0,79))*w,Math.floor(random(0,79))*w);
 }
 
 function runThings(){
@@ -115,11 +115,6 @@ function loseGame(){
   }
 
 
-
-//   // define global variables, set score=0
-// setup function
-// // create the canvas
-// // initialize w based on canvas size
 // draw function
 // // snake.run(), food.run()
 // // check whether the snake is tangled.  If so, call newGame() // use newGame even in setup to initialize everything

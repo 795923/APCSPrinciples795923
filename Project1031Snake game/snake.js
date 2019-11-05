@@ -48,24 +48,3 @@ class Snake{
   rect(this.loc.x, this.loc.y, w, w);
   }
 }
-
-
-// body 		// array of segments.
-// add a segment after eating food.
-// each segment follows the segment in front of it.
-// each segment has a location, this can be a vector.
-// update function  // use velocity to update the location of the head and body segments. render function  // use this.clr to set the pen color
-// // use this.location to draw the head, convert location into window coordinates by //multiplying by global var w and adding header_height and taking //Math.floor(this.location.x/w) and Math.floor(this.location.y/w) to get row,col, then //draw at row*w, col*w+header_height
-// //then do the same for each segment of the body in a for-loop grow function
-// // add a segment to the body
-// tangled function
-// // call AFTER update test whether the snake got tangled up, return True if so
-// // convert to row,col to compare locations.  Maybe write a function for that?
-
-//splice code example
-// for(var i = ball.length - 1; i >= 0; i--){
-//   if(ball[i].isColliding()){
-//     ball.splice(i, 1)
-//     health= health - 1
-//   }
-// }
