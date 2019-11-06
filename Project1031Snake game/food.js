@@ -12,14 +12,15 @@ run(){
 }
 
 update(){
-  if(snake.loc.x === this.loc.x &&
-     snake.loc.y === this.loc.y){
+  if(snake.head.x === this.loc.x &&
+     snake.head.y === this.loc.y){
     this.loc.x = Math.floor(random(0,79))*w;
     this.loc.y = Math.floor(random(0,79))*w;
   }
 }
 
 render(){
+  // render th
   fill(random(255), random(255), random(255));
   rect(this.loc.x, this.loc.y, w, w);
   }
