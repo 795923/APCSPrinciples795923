@@ -1,13 +1,13 @@
 //  Allison Smith
-//  November 5, 2019
+//  November 6, 2019
 
-// var snake = []
 var gameState = 1
 var w = 10
 
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
+  frameRate(1);
   loadThings();
 }
 
@@ -24,7 +24,6 @@ function runThings(){
 
 //runs the snake and food classes
 function draw(){
-  frameRate(15);
   background(5,5,5);
     if(gameState === 1){
       startGame()
