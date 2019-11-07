@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 6, 2019
+//  November 7, 2019
 
 class Snake{
   constructor(x,y,dx,dy){
@@ -16,6 +16,7 @@ class Snake{
   }
 
   run(){
+    //run update, checkEdges, and render functions
     this.checkEdges();
     this.update();
     this.render();

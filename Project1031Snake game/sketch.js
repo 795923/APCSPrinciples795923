@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 6, 2019
+//  November 7, 2019
 
 var gameState = 1
 var w = 10
@@ -7,6 +7,7 @@ var w = 10
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
+  // slow down snake movement
   frameRate(1);
   loadThings();
 }

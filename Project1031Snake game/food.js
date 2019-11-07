@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 6, 2019
+//  November 7, 2019
 
 class Food{
   constructor(x,y){
@@ -7,6 +7,7 @@ class Food{
   }
 
 run(){
+  //run update and render functions
   this.update();
   this.render();
 }
