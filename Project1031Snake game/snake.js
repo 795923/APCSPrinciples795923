@@ -7,12 +7,11 @@ class Snake{
     this.vel = createVector(dx,dy);
     this.clr = color(random(255), random(255), random(255));
     this.body = [];
-    this.loadSegment()
   }
 
   loadSegment(){
     //load new body segment
-    this.body.push(createVector(0,0));
+    this.body.push(createVector(this.head.x, this.head.y));
   }
 
   run(){
@@ -52,7 +51,7 @@ class Snake{
          this.loadSegment();
        }
     // update the body
-    for(var i = 0; i < this.body.length; i++){
+    for(var i = this.body.length-1; i < 0; i--){
       this.body[0].x = this.head.x;
       this.body[0].y = this.head.y;
       this.body[i].x = this.body[i-1].x;
