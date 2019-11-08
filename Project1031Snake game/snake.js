@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 7, 2019
+//  November 8, 2019
 
 class Snake{
   constructor(x,y,dx,dy){
@@ -11,7 +11,7 @@ class Snake{
 
   loadSegment(){
     //load new body segment
-    this.body.push(createVector(this.head.x, this.head.y));
+    this.body.push(createVector(0, 0));
   }
 
   run(){
@@ -51,15 +51,23 @@ class Snake{
          this.loadSegment();
        }
     // update the body
-    for(var i = this.body.length-1; i < 0; i--){
+    if(this.body.length > 1){
+      for(var i = this.body.length-1; i >= 0; i--){
+        this.body[i].x = this.body[i-1].x;
+        this.body[i].y = this.body[i-1].y;
+      }
+    }
+    if(this.body.length === 1){
       this.body[0].x = this.head.x;
       this.body[0].y = this.head.y;
-      this.body[i].x = this.body[i-1].x;
-      this.body[i].y = this.body[i-1].y;
     }
     // update the head
     this.head.add(this.vel);
-
+    if(this.head.x === food.food.x &&
+       this.head.y === food.food.y){
+        food.food.x = Math.floor(random(0,79))*w;
+        food.food.y = Math.floor(random(0,79))*w;
+      }
 }
 
   render(){

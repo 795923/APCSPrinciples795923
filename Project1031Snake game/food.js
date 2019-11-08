@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 7, 2019
+//  November 8, 2019
 
 class Food{
   constructor(x,y){
@@ -14,11 +14,11 @@ run(){
 
 update(){
   //change location if snake and food touch
-  if(snake.head.x === this.food.x &&
-     snake.head.y === this.food.y){
-    this.food.x = Math.floor(random(0,79))*w;
-    this.food.y = Math.floor(random(0,79))*w;
-  }
+  // if(snake.head.x === this.food.x &&
+  //    snake.head.y === this.food.y){
+  //   this.food.x = Math.floor(random(0,79))*w;
+  //   this.food.y = Math.floor(random(0,79))*w;
+  // }
 }
 
 render(){
