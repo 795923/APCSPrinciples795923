@@ -5,7 +5,6 @@ class Snake{
   constructor(x,y,dx,dy){
     this.head = createVector(x,y);
     this.vel = createVector(dx,dy);
-    this.clr = color(random(255), random(255), random(255));
     this.body = [];
   }
 
@@ -22,6 +21,8 @@ class Snake{
   }
 
   checkEdges(){
+    this.vel.x = 0;
+    this.vel.y = 0;
 //up arrow
     if(keyCode===38){
       this.vel.x = 0;
@@ -47,20 +48,21 @@ class Snake{
   update(){
     //add segment
     if(this.head.x === food.food.x &&
-       this.head.y === food.food.y){
+      this.head.y === food.food.y){
+         console.log("Hello Allison");
          this.loadSegment();
        }
-    // update the body
-    if(this.body.length > 1){
-      for(var i = this.body.length-1; i >= 0; i--){
-        this.body[i].x = this.body[i-1].x;
-        this.body[i].y = this.body[i-1].y;
-      }
-    }
-    if(this.body.length === 1){
-      this.body[0].x = this.head.x;
-      this.body[0].y = this.head.y;
-    }
+       // update the body
+         for(var i = this.body.length-1; i >= 0; i--){
+           if(i===0){
+           this.body[0].x = this.head.x;
+           this.body[0].y = this.head.y;
+         }
+         else{
+           this.body[i].x = this.body[i-1].x;
+           this.body[i].y = this.body[i-1].y;
+         }
+       }
     // update the head
     this.head.add(this.vel);
     if(this.head.x === food.food.x &&
@@ -72,7 +74,7 @@ class Snake{
 
   render(){
   // render head
-  fill(this.clr);
+  fill(250, 0, 0);
   rect(this.head.x, this.head.y, w, w);
   // render the body
   for(var i = 0; i < this.body.length; i++){

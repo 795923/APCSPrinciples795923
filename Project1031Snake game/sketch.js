@@ -4,6 +4,7 @@
 var gameState = 1
 var w = 10
 
+
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
@@ -14,7 +15,7 @@ function setup() {
 
 //creates snake and food
 function loadThings(){
-  snake = new Snake(Math.floor(random(0,79))*w, Math.floor(random(0,79))*w, w, w);
+  snake = new Snake(400,400, w, w);
   food = new Food(Math.floor(random(0,79))*w,Math.floor(random(0,79))*w);
 }
 
