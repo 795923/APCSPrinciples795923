@@ -15,8 +15,13 @@ function setup() {
 
 //creates snake and food
 function loadThings(){
-  snake = new Snake(400,400, w, w);
+  snake = new Snake(400, 400, w, w);
   food = new Food(Math.floor(random(0,79))*w,Math.floor(random(0,79))*w);
+}
+
+// idk how to use this function
+function checkTangled (){
+  snake.tangled()
 }
 
 function runThings(){
@@ -49,8 +54,7 @@ function draw(){
         textSize(20);
         text("Press E for Easy", 100, 500);
          if (keyCode === 69) {
-           health = 3
-           score = 0
+           frameRate(5);
            gameState = gameState + 1
      }
   //medium
@@ -58,8 +62,7 @@ function draw(){
         textSize(20);
         text("Press M for Medium", 325, 500);
         if (keyCode === 77) {
-           health = 4
-           score = 0
+           frameRate(10);
            gameState = gameState + 1
        }
   //hard
@@ -67,8 +70,7 @@ function draw(){
         textSize(20);
         text("Press H for Hard", 600, 500);
          if (keyCode === 72) {
-           health = 8
-           score = 0
+           frameRate(15);
            gameState = gameState + 1
       }
   //how to play
@@ -114,26 +116,3 @@ function loseGame(){
       gameState = 1
     }
   }
-
-
-// draw function
-// // snake.run(), food.run()
-// // check whether the snake is tangled.  If so, call newGame() // use newGame even in setup to initialize everything
-// // check whether the snake got the food.  If so, call startNewRound()
-// // draw the score and header within y=0..header_height area
-//
-// checkTangled function
-// // return snake.tangled()
-// function startNewRound
-// update the score by 20, make the snake grow by one segment, move the food to a random place
-// function newGame
-// score = 0
-// create the snake object in a random cell near the middle, create the food object, make sure it’s not overlapping the snake.  Put it somewhere that’s not close to the middle.
-// function keyPressed
-// check for UP_ARROW, DOWN_ARROW, etc, adjust snake.vel accordingly
-// function run
-// call update to update the state of the game
-// call render to draw the game
-//
-// gotFood function
-// need to compute row,col of snake.loc and food.loc, return (snake.row === food.row && snake.col === food.col)
