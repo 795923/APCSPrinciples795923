@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 12, 2019
+//  November 14, 2019
 
 class Snake{
   constructor(x,y,dx,dy){

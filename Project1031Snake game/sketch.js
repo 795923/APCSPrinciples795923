@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 12, 2019
+//  November 14, 2019
 
 var gameState = 1
 var w = 10
@@ -15,8 +15,8 @@ function setup() {
 
 //creates snake and food
 function loadThings(){
-  snake = new Snake(400, 400, w, w);
-  food = new Food(Math.floor(random(0,79))*w,Math.floor(random(0,79))*w);
+    snake = new Snake(400, 400, w, w);
+    food = new Food(Math.floor(random(0,800/w))*w,Math.floor(random(0,800/w))*w);
 }
 
 // idk how to use this function
@@ -55,6 +55,7 @@ function draw(){
         text("Press E for Easy", 100, 500);
          if (keyCode === 69) {
            frameRate(5);
+           w=40
            gameState = gameState + 1
      }
   //medium
@@ -63,6 +64,7 @@ function draw(){
         text("Press M for Medium", 325, 500);
         if (keyCode === 77) {
            frameRate(10);
+           w=20
            gameState = gameState + 1
        }
   //hard
@@ -71,6 +73,7 @@ function draw(){
         text("Press H for Hard", 600, 500);
          if (keyCode === 72) {
            frameRate(15);
+           w=10
            gameState = gameState + 1
       }
   //how to play
