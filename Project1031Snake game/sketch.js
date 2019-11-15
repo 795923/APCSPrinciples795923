@@ -1,9 +1,8 @@
 //  Allison Smith
-//  November 14, 2019
+//  November 15, 2019
 
 var gameState = 1
 var w = 10
-
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -18,17 +17,26 @@ function loadThings(){
     food = new Food(Math.floor(random(0,800/w))*w,Math.floor(random(0,800/w))*w);
 }
 
-// idk how to use this function
-function checkTangled (){
-  snake.tangled()
+function checkEdges(){
+  //checks edges
+    if(snake.head.x<0||snake.head.x>width||snake.head.y<0 || snake.head.y>height){
+      gameState = 3
+    }
+  //checks snake hitting snake
+    for(var i = snake.body.length-1; i >= 0; i--)
+      if(snake.head.x === snake.body[i].x &&
+        snake.head.y === snake.body[i].y){
+          gameState = 3
+        }
 }
 
+//runs food and snake code
 function runThings(){
   food.run();
   snake.run();
 }
 
-//runs the snake and food classes
+//each gamestate start code
 function draw(){
   background(5,5,5);
     if(gameState === 1){
@@ -42,6 +50,7 @@ function draw(){
     }
   }
 
+//opening screen
   function startGame(){
       background(20,20,20);
   //title
@@ -53,6 +62,7 @@ function draw(){
         textSize(20);
         text("Press E for Easy", 100, 500);
          if (keyCode === 69) {
+           frameRate(10);
            w=40
            loadThings();
            gameState = gameState + 1
@@ -62,15 +72,17 @@ function draw(){
         textSize(20);
         text("Press M for Medium", 325, 500);
         if (keyCode === 77) {
+           frameRate(15);
            w=20
           loadThings();
-           gameState = gameState + 1
+          gameState = gameState + 1
        }
   //hard
         fill(255,0 ,0 );
         textSize(20);
         text("Press H for Hard", 600, 500);
          if (keyCode === 72) {
+           frameRate(20);
            w=10
            loadThings();
            gameState = gameState + 1
@@ -83,33 +95,24 @@ function draw(){
       text( "Beat your own highscore to win the game.", 100, 675);
   }
 
+//gameplay screen
   function playGame(){
       background(20,20,20);
       runThings();
-//      if (snake touchs snake
-//          or snake touches the edge) {
-//          gameState = gameState + 1
-//       }
+      checkEdges();
     }
 
+//lose screen
 function loseGame(){
-    background(20,20,20);
+    background(250,0,0);
 //score
     fill(0, 250, 0);
     textSize(32);
-    text("Score: " + score, 650, 30);
+    text("Score: " + snake.body.length, 650, 50);
 //lose
-    // if(highscore > new score){
     fill(250, 250, 250);
     textSize(100);
-    text("Try Again", 150, 300);
-// }
-//win
-    // if(highscore < new score){
-    fill(250, 250, 250);
-    textSize(100);
-    text("Try Again", 150, 300);
-  // }
+    text("Try Again", 175, 300);
 //restart
     fill(250, 250, 250);
     textSize(50);

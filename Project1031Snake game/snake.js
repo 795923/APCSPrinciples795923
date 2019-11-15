@@ -1,5 +1,5 @@
 //  Allison Smith
-//  November 14, 2019
+//  November 15, 2019
 
 class Snake{
   constructor(x,y,dx,dy){
@@ -10,7 +10,7 @@ class Snake{
 
   loadSegment(){
     //load new body segment
-    this.body.push(createVector(0, 0));
+    this.body.push(createVector(-100,-100));
   }
 
   run(){
