@@ -9,13 +9,12 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   // slow down snake movement
-  frameRate(15);
-  loadThings();
+  frameRate(10);
 }
 
 //creates snake and food
 function loadThings(){
-    snake = new Snake(400, 400, w, w);
+    snake = new Snake(400, 400);
     food = new Food(Math.floor(random(0,800/w))*w,Math.floor(random(0,800/w))*w);
 }
 
@@ -54,8 +53,8 @@ function draw(){
         textSize(20);
         text("Press E for Easy", 100, 500);
          if (keyCode === 69) {
-           frameRate(5);
            w=40
+           loadThings();
            gameState = gameState + 1
      }
   //medium
@@ -63,8 +62,8 @@ function draw(){
         textSize(20);
         text("Press M for Medium", 325, 500);
         if (keyCode === 77) {
-           frameRate(10);
            w=20
+          loadThings();
            gameState = gameState + 1
        }
   //hard
@@ -72,8 +71,8 @@ function draw(){
         textSize(20);
         text("Press H for Hard", 600, 500);
          if (keyCode === 72) {
-           frameRate(15);
            w=10
+           loadThings();
            gameState = gameState + 1
       }
   //how to play
