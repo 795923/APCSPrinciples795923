@@ -33,7 +33,6 @@ update(){
 
 render(){
   // render the food
-  // fill(random(255), random(255), random(255));
-  // rect(this.food.x, this.food.y, w, w);
+    image(appleImg, this.food.x, this.food.y, w,w);
   }
 }

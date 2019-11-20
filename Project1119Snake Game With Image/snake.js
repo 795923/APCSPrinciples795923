@@ -68,8 +68,12 @@ class Snake{
 
   render(){
   // render head
-  fill (0,250,0);
-  rect(this.head.x, this.head.y, w, w);
+if(this.vel.x === 0){
+  image(snakeHeadImg, this.head.x, this.head.y, w,w);
+}
+if(this.vel.y === 0){
+  image(snakeHeadRotateImg, this.head.x, this.head.y, w,w);
+}
   // render the body
   for(var i = 0; i < this.body.length; i++){
     rect(this.body[i].x, this.body[i].y, w, w);

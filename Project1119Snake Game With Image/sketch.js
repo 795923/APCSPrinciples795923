@@ -9,6 +9,9 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   // slow down snake movement
   frameRate(10);
+  appleImg = loadImage("apple2.png");
+  snakeHeadImg = loadImage("snakeHead.png");
+  snakeHeadRotateImg = loadImage("snakeHeadRotate.png");
 }
 
 //creates snake and food
@@ -19,7 +22,7 @@ function loadThings(){
 
 function checkEdges(){
   //checks edges
-    if(snake.head.x<0||snake.head.x>width||snake.head.y<0 || snake.head.y>height){
+    if(snake.head.x<0||snake.head.x>=width||snake.head.y<0 || snake.head.y>=height){
       gameState = 3
     }
   //checks snake hitting snake
