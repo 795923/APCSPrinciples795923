@@ -10,8 +10,11 @@ function setup() {
   // slow down snake movement
   frameRate(10);
   appleImg = loadImage("apple2.png");
-  snakeHeadImg = loadImage("snakeHead.png");
-  snakeHeadRotateImg = loadImage("snakeHeadRotate.png");
+  snakeHeadUp = loadImage("headUp.png");
+  snakeHeadDown = loadImage("headDown.png");
+  snakeHeadLeft = loadImage("headLeft.png");
+  snakeHeadRight = loadImage("headRight.png");
+  snakeBody = loadImage("body.png")
 }
 
 //creates snake and food

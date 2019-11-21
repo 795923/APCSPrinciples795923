@@ -27,21 +27,25 @@ class Snake{
     if(keyCode===38){
       this.vel.x = 0;
       this.vel.y = -w;
+      image(snakeHeadUp, this.head.x, this.head.y, w,w);
     }
 //down arrow
     else if (keyCode===40) {
       this.vel.x = 0;
       this.vel.y = w;
+      image(snakeHeadDown, this.head.x, this.head.y, w,w);
     }
 //left arrow
     else if (keyCode===37) {
       this.vel.x = -w;
       this.vel.y = 0;
+      image(snakeHeadLeft, this.head.x, this.head.y, w,w);
     }
 //right arrow
     else if (keyCode===39) {
       this.vel.x = w;
       this.vel.y = 0;
+      image(snakeHeadRight, this.head.x, this.head.y, w,w);
     }
   }
 
@@ -67,16 +71,9 @@ class Snake{
 }
 
   render(){
-  // render head
-if(this.vel.x === 0){
-  image(snakeHeadImg, this.head.x, this.head.y, w,w);
-}
-if(this.vel.y === 0){
-  image(snakeHeadRotateImg, this.head.x, this.head.y, w,w);
-}
   // render the body
   for(var i = 0; i < this.body.length; i++){
-    rect(this.body[i].x, this.body[i].y, w, w);
+    image(snakeBody,this.body[i].x, this.body[i].y, w, w);
     }
   }
 }
