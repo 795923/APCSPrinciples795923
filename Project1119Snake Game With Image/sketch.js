@@ -13,7 +13,7 @@ function setup() {
   snakeHeadUp = loadImage("headUp.png");
   snakeHeadDown = loadImage("headDown.png");
   snakeHeadLeft = loadImage("headLeft.png");
-  snakeHeadRight = loadImage("headRight.png");
+  snakeHeadRight = loadImage("headUp - Copy (2).png");
   snakeBody = loadImage("body.png")
 }
 

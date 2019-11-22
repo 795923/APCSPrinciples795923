@@ -23,6 +23,13 @@ class Snake{
   checkEdges(){
     this.vel.x = 0;
     this.vel.y = 0;
+//start game
+    if(this.vel.x === 0 &&
+       this.vel.y === 0 &&
+       this.head.x === 400 &&
+       this.head.y === 400){
+    image(snakeHeadUp, 400, 400, w,w);
+  }
 //up arrow
     if(keyCode===38){
       this.vel.x = 0;
