@@ -3,7 +3,6 @@ class Ball{
   constructor(x,y){
     this.loc = createVector(x,y);
     this.redClr = Math.floor(random(255))
-    this.clr = color(this.redClr,0, 0)
   }
 
 run(){
@@ -11,7 +10,7 @@ run(){
 }
 
 render(){
-  fill(this.clr);
+  fill(this.redClr,0, 0);
   ellipse(this.loc.x, this.loc.y, 39, 39);
   }
 }

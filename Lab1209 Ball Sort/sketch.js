@@ -41,4 +41,4 @@ function renderBalls(){
   for(var i=0; i < numBalls; i++){
     balls[i].render();
     }
-  }
+}
