@@ -1,9 +1,8 @@
-class Ball{
-  constructor(x,y,dx,dy,id){
+class Planet{
+  constructor(x,y,dx,dy){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
     this.clr = color(255,105,180)
-    this.id =id
   }
 
 run(){
@@ -31,22 +30,6 @@ checkEdges(){
 }
 
 update(){
-  var distToMainBall;
-  if(this.id >= 0) {
-    distToMainBall = this.loc.dist(mainBall.loc);
-    // attract balls
-    if(distToMainBall < 250){
-      this.acc = p5.Vector.sub(mainBall.loc, this.loc);
-      this.acc.normalize();
-      this.acc.mult(0.1);
-    }
-    //repell balls
-    if(distToMainBall < 150){
-      this.acc = p5.Vector.sub(this.loc, mainBall.loc);
-      this.acc.normalize();
-      this.acc.mult(0.5);
-    }
-  }
   this.vel.limit(5)
   this.vel.add(this.acc);
   this.loc.add(this.vel);

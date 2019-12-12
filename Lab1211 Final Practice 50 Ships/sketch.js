@@ -16,7 +16,7 @@ function draw() {
 
 function loadThings(){
   planet = new Planet(random(width/2), random(height/2), random (-5,5), random(-5,5));
-  for(var i=0; i>=49; i++){
+  for(var i=0; i<=49; i++){
     ship[i]=new Ship(random(width), random(height), random (-1,1), random(-1,1));
   }
 }
